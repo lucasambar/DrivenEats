@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>DrivenEats</title>
+
+</head>
+
+<body>
+    <div class="site">
+        <div class="summary hidden">
+            <div class="confirm-order-container">
+                <div class="confirm-label">
+                    Confirme seu pedido
+                </div>
+                <div class="container-itens">
+                    <div class="item1">
+                        <span class="nome-prato">Frango Yin Yang</span>
+                        <span class="valor-prato">14,90</span>
+                    </div>
+                    <div class="item2">
+                        <span class="nome-prato">Coquinha gelada</span>
+                        <span class="valor-prato">4,90</span>
+                    </div>
+                    <div class="item3">
+                        <span class="nome-prato">Pudim</span>
+                        <span class="valor-prato">7,9</span>
+                    </div>
+                    <div class="total">
+                        <span>TOTAL</span>
+                        <span class="valor-total">27,70</span>
+                    </div>
+                </div>
+                <div class="accept-order" onclick="askPersonalInfo()">Tudo certo, pode pedir!</div>
+                <div class="cancel-order" onclick="backToMainScreen()">Cancelar</div>
+            </div>
+        </div>
+
+        <div class="personal-info hidden">
+            <div class="confirm-order-container">
+                <div class="confirm-label">
+                    Confirme seus dados
+                </div>
+                <div class="info-container">
+                    <div class="container-personal-info">
+                        <div class="personal-name">
+                            <input type="text" name="personal-name" id="personal-name" placeholder="Insira seu nome:">
+                        </div>
+                        <div class="personal-address">
+                            <input type="text" name="personal-address" id="personal-address"
+                                placeholder="Insira seu endereço:">
+                        </div>
+                    </div>
+                </div>
+                <div class="accept-order" onclick="acceptOrder()">Finalizar pedido!</div>
+                <div class="cancel-order" onclick="backToMainScreen()">Cancelar</div>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="header-marca">
+                <h1>DrivenEats</h1>
+                <h2>Sua comida em 6 minutos</h2>
+            </div>
+        </div>
+        <div class="header-space"></div>
+
+
+        <div class="CONTAINER-FOOD">
+            <div class="order-of-choice">
+                <h1>Primeiro, seu prato</h1>
+            </div>
+            <div class="container-plates">
+                <div class="choosed-plate comida comida1">
+                    <div class="container-choice" onclick="selectOptionFood('.comida1')">
+                        <div class="plate-image">
+                            <img src="./img/frango_yin_yang 1.png" alt="">
+                        </div>
+                        <div class="plate-name">Frango yin yang</div>
+                        <div class="plate-description">Um pouco de arroz, um pouco de salada</div>
+                        <div class="price-container">
+                            <div class="coin">R$</div>
+                            <div class="price">14,90</div>
+                        </div>
+                        <div class="check hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choosed-plate comida comida2">
+                    <div class="container-choice" onclick="selectOptionFood('.comida2')">
+                        <div class="plate-image">
+                            <img src="./img/frango_yin_yang 1.png" alt="">
+                        </div>
+                        <div class="plate-name">Frango yin yang</div>
+                        <div class="plate-description">Um pouco de arroz, um pouco de salada</div>
+                        <div class="price-container">
+                            <div class="coin">R$</div>
+                            <div class="price">14,90</div>
+                        </div>
+                        <div class="check hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choosed-plate comida comida3">
+                    <div class="container-choice" onclick="selectOptionFood('.comida3')">
+                        <div class="plate-image">
+                            <img src="./img/frango_yin_yang 1.png" alt="">
+                        </div>
+                        <div class="plate-name">Frango yin yang</div>
+                        <div class="plate-description">Um pouco de arroz, um pouco de salada</div>
+                        <div class="price-container">
+                            <div class="coin">R$</div>
+                            <div class="price">14,90</div>
+                        </div>
+                        <div class="check hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="CONTAINER-DRINK">
+            <div class="order-of-choice">
+                <h1>Agora, sua bebida</h1>
+            </div>
+            <div class="container-plates">
+                <div class="choosed-plate drink drink1">
+                    <div class="container-choice" onclick="selectOptionDrink('.drink1')">
+                        <div class="plate-image">
+                            <img src="./img/coquinha_gelada 1.png" alt="">
+                        </div>
+                        <div class="plate-name">Coquinha gelada</div>
+                        <div class="plate-description">Lata 350ml</div>
+                        <div class="price-container">
+                            <div class="coin">R$</div>
+                            <div class="price">6,90</div>
+                        </div>
+                        <div class="check hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choosed-plate drink drink2">
+                    <div class="container-choice" onclick="selectOptionDrink('.drink2')">
+                        <div class="plate-image">
+                            <img src="./img/coquinha_gelada 1.png" alt="">
+                        </div>
+                        <div class="plate-name">Coquinha gelada</div>
+                        <div class="plate-description">Lata - 350ml</div>
+                        <div class="price-container">
+                            <div class="coin">R$</div>
+                            <div class="price">6,90</div>
+                        </div>
+                        <div class="check hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choosed-plate drink drink3">
+                    <div class="container-choice" onclick="selectOptionDrink('.drink3')">
+                        <div class="plate-image">
+                            <img src="./img/coquinha_gelada 1.png" alt="">
+                        </div>
+                        <div class="plate-name">Coquinha gelada</div>
+                        <div class="plate-description">Lata - 350ml</div>
+                        <div class="price-container">
+                            <div class="coin">R$</div>
+                            <div class="price">6,90</div>
+                        </div>
+                        <div class="check hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="CONTAINER-DESERT">
+            <div class="order-of-choice">
+                <h1>Por fim, sua sobremesa</h1>
+            </div>
+            <div class="container-plates">
+                <div class="choosed-plate dessert dessert1">
+                    <div class="container-choice" onclick="selectOptionDessert('.dessert1')">
+                        <div class="plate-image">
+                            <img src="./img/pudim 1.png" alt="">
+                        </div>
+                        <div class="plate-name">Pudim</div>
+                        <div class="plate-description">Apenas pudim</div>
+                        <div class="price-container">
+                            <div class="coin">R$</div>
+                            <div class="price">7,90</div>
+                        </div>
+                        <div class="check hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choosed-plate dessert dessert2">
+                    <div class="container-choice" onclick="selectOptionDessert('.dessert2')">
+                        <div class="plate-image">
+                            <img src="./img/pudim 1.png" alt="">
+                        </div>
+                        <div class="plate-name">Pudim</div>
+                        <div class="plate-description">Apenas pudim</div>
+                        <div class="price-container">
+                            <div class="coin">R$</div>
+                            <div class="price">7,90</div>
+                        </div>
+                        <div class="check hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choosed-plate dessert dessert3">
+                    <div class="container-choice" onclick="selectOptionDessert('.dessert3')">
+                        <div class="plate-image">
+                            <img src="./img/pudim 1.png" alt="">
+                        </div>
+                        <div class="plate-name">Pudim</div>
+                        <div class="plate-description">Apenas pudim</div>
+                        <div class="price-container">
+                            <div class="coin">R$</div>
+                            <div class="price">7,90</div>
+                        </div>
+                        <div class="check hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+            
+                </div>
+            </div>
+        </div>
+        <div class="footer-space"></div>
+        <div class="footer">
+            <div class="order" onclick="makeOrder()">
+                <h1>Selecione os 3 itens <br> para fechar o pedido</h1>
+            </div>
+        </div>
+
+
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
